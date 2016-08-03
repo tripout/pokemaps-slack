@@ -17,3 +17,4 @@ Added MySQL DB support so the script doesn't fire off Slack Alerts for each re-s
 
 Also cleans up old Pokemon when the script doesn't find a match which should keep the size to a minimum.
 
+Added the Pokemon Images showing as the BOT Icon and the name of the pokemon as the BOT name. Thanks to MSBullock
