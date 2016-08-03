@@ -11,6 +11,8 @@ $latitude = $json->{"message"}->{"latitude"};
 $longitude = $json->{"message"}->{"longitude"};
 $encounter_id = $json->{"message"}->{"encounter_id"};
 $ignore   = [
+    16, //Pidgey
+    19, //Rattata
 ];
 $time = time();
 $db = "DB NAME";
