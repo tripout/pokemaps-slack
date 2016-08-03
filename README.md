@@ -9,6 +9,7 @@ Modified and Maintained by - https://github.com/tripout
 
 Testing - https://github.com/msbullock
 
+![pokemaps-slack](https://cloud.githubusercontent.com/assets/6321072/17355478/b7d8515a-5905-11e6-880e-5111a180600e.png)
 
 v0.1
 ============
