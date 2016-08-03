@@ -14,6 +14,7 @@ $ignore   = [
     16, //Pidgey
     19, //Rattata
 ];
+$url = "SLACK URL HERE;
 $time = time();
 $dbuser = "DB USER";
 $dbpass = "DB PASS";
@@ -44,6 +45,7 @@ function send_webhook(){
     global $longitude;
     global $gone;
     global $pokeimg;
+    global $url;
     
     if (!in_array($poke_id, $ignore)) {
         $data = "payload=" . json_encode(array(
@@ -52,7 +54,6 @@ function send_webhook(){
             "username"        => $poke,
             "text"          =>  "$poke ($poke_id) found, until ".date('g:i:s a', $gone)." <https://www.google.com/maps/dir/Current%2BLocation/".$latitude.",".$longitude."|Get Directions>",
         ));
-        $url = "slack_url";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
