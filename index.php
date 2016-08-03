@@ -41,6 +41,7 @@ function send_webhook(){
     global $latitude;
     global $longitude;
     global $gone;
+    global $pokeimg;
     
     if (!in_array($poke_id, $ignore)) {
         $data = "payload=" . json_encode(array(
