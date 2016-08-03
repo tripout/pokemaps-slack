@@ -15,10 +15,10 @@ $ignore   = [
     19, //Rattata
 ];
 $time = time();
-$db = "DB NAME";
 $dbuser = "DB USER";
 $dbpass = "DB PASS";
 
+$db = "webhooks";
 $dbtable = "webhooks";
 $dbhost = "localhost";
 
