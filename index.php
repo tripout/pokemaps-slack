@@ -14,7 +14,7 @@ $ignore   = [
     16, //Pidgey
     19, //Rattata
 ];
-$url = "SLACK URL HERE;
+$url = "SLACK URL HERE";
 $time = time();
 $dbuser = "DB USER";
 $dbpass = "DB PASS";
@@ -33,7 +33,7 @@ if ($result->num_rows == 0) {
     send_webhook();
 } 
 else {
-        $delete_query = "DELETE FROM `$dbtable` WHERE `time`>= $time";
+        $delete_query = "DELETE FROM `$dbtable` WHERE `time`<= $time";
         $result = $db->query($delete_query);
 }
 
