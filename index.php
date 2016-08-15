@@ -14,7 +14,7 @@ $ignore   = [
     16, //Pidgey
     19, //Rattata
 ];
-$url = "SLACK URL HERE;
+$url = "SLACK URL HERE";
 $time = time();
 $dbuser = "DB USER";
 $dbpass = "DB PASS";
@@ -27,13 +27,13 @@ $db = new mysqli($dbhost, $dbuser, $dbpass, $db);
 $dbquery = "SELECT * FROM `$dbtable` WHERE `encounter_id` = '$encounter_id'";
 $result = $db->query($dbquery);
 
-if ($result->num_rows == 0) { 
+if ($result->num_rows == 0 && $poke <> NULL) { //$poke added to keep from sometimes getting blank items spammed into slack.
     $insert_query = "INSERT INTO `$dbtable` (`encounter_id`, `time`) VALUES ('".$encounter_id."', '".$gone."')";
     $result = $db->query($insert_query);
     send_webhook();
 } 
 else {
-        $delete_query = "DELETE FROM `$dbtable` WHERE `time`>= $time";
+        $delete_query = "DELETE FROM `$dbtable` WHERE `time`<= $time";
         $result = $db->query($delete_query);
 }
 
