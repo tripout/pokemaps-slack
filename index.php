@@ -27,7 +27,7 @@ $db = new mysqli($dbhost, $dbuser, $dbpass, $db);
 $dbquery = "SELECT * FROM `$dbtable` WHERE `encounter_id` = '$encounter_id'";
 $result = $db->query($dbquery);
 
-if ($result->num_rows == 0) { 
+if ($result->num_rows == 0 && `time` >= $time) {  //time added to fix issue with blank data getting spammed in the chat sometimes
     $insert_query = "INSERT INTO `$dbtable` (`encounter_id`, `time`) VALUES ('".$encounter_id."', '".$gone."')";
     $result = $db->query($insert_query);
     send_webhook();
